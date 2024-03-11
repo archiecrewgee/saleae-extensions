@@ -1,0 +1,30 @@
+{
+    "version": "0.0.0",
+    "apiVersion": "1.0.0",
+    "author": "Archie David Crew-Gee",
+    "description": "Provides gradient statistics over a given time period",
+    "name": "Gradient Analyser",
+    "extensions": {
+        "Gradient Analyser": {
+            "type": "AnalogMeasurement",
+            "entryPoint": "gradient_analyser.GradientAnalyser",
+            "metrics": {
+                "average": {
+                    "name": "Average",
+                    "notation" : "gradient <sub>average</sub>",
+                    "units": "V/s"
+                },
+                "peak": {
+                    "name": "Peak",
+                    "notation": "gradient <sub>peak</sub>",
+                    "units": "V/s"
+                },
+                "trough": {
+                    "name": "Trough",
+                    "notation": "gradient <sub>trough</sub>",
+                    "units": "V/s"
+                }
+            }
+        }
+    }
+}
