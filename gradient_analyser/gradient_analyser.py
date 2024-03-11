@@ -7,7 +7,7 @@ from saleae.range_measurements import AnalogMeasurer
 
 
 # todo: look into get_capabiliteis
-NUM_OF_SECTIONS = 100000
+NUM_OF_SECTIONS = 100
 
 class GradientAnalyser(AnalogMeasurer):
     supported_measurements = []

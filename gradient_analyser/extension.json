@@ -23,11 +23,6 @@
                     "name": "Trough",
                     "notation": "gradient <sub>trough</sub>",
                     "units": "dV/ds"
-                },
-                "0": {
-                    "name": "0"
-                },"test": {
-                    "name": "0"
                 }
             }
         }
