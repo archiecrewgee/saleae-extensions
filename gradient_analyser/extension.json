@@ -12,17 +12,22 @@
                 "average": {
                     "name": "Average",
                     "notation" : "gradient <sub>average</sub>",
-                    "units": "V/s"
+                    "units": "dV/ds"
                 },
                 "peak": {
                     "name": "Peak",
                     "notation": "gradient <sub>peak</sub>",
-                    "units": "V/s"
+                    "units": "dV/ds"
                 },
                 "trough": {
                     "name": "Trough",
                     "notation": "gradient <sub>trough</sub>",
-                    "units": "V/s"
+                    "units": "dV/ds"
+                },
+                "0": {
+                    "name": "0"
+                },"test": {
+                    "name": "0"
                 }
             }
         }
