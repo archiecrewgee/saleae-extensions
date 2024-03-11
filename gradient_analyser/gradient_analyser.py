@@ -1,6 +1,7 @@
 # import math
 import numpy as np
 
+from saleae.data import GraphTime
 from saleae.range_measurements import AnalogMeasurer
 
 
@@ -12,12 +13,6 @@ class GradientAnalyser(AnalogMeasurer):
     def __init__(self, requested_measurements):
         super().__init__(requested_measurements)
 
-        # self.average = 0
-        # self.window = 0
-        # self.peak = 0
-        # self.trough = 0
-
-
 
     # This method will be called one or more times per measurement with batches of data
     # data has the following interface
@@ -25,7 +20,7 @@ class GradientAnalyser(AnalogMeasurer):
     #   * `data.samples` is a numpy array of float32 voltages, one for each sample
     #   * `data.sample_count` is the number of samples (same value as `len(data.samples)` but more efficient if you don't need a numpy array)
     def process_data(self, data):
-
+        self.test = data.sample_count / float(data.end_time - data.start_time)
         pass
 
     # This method is called after all the relevant data has been passed to `process_data`
@@ -34,6 +29,6 @@ class GradientAnalyser(AnalogMeasurer):
         values = {
             "average" : 0,
             "peak" :  0,
-            "trough" :  0,
+            "trough" :  0
         }
         return values
