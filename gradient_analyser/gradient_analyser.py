@@ -57,8 +57,7 @@ class GradientAnalyser(AnalogMeasurer):
         values = {
             "average" : (self.slices[-1][0] - self.slices[0][0]) / period,
             "peak" :  max(gradient) / tick_period,
-            "trough" :  min(gradient) / tick_period,
-            "slices": len(self.slices)
+            "trough" :  min(gradient) / tick_period
         }
 
         return values

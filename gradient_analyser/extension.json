@@ -23,8 +23,7 @@
                     "name": "Trough",
                     "notation": "gradient <sub>trough</sub>",
                     "units": "dV/ds"
-                },
-                "slices" : { "name" : "slices" }
+                }
             }
         }
     }
