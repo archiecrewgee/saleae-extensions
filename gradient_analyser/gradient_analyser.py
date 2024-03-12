@@ -25,8 +25,8 @@ class GradientAnalyser(AnalogMeasurer):
     #   * `data.samples` is a numpy array of float32 voltages, one for each sample
     #   * `data.sample_count` is the number of samples (same value as `len(data.samples)` but more efficient if you don't need a numpy array)
     def process_data(self, data):
-        average = np.sum(data.samples) / data.sample_count
-        period = float(data.end_time - data.start_time) / data.sample_count
+        average = sum(data.samples) / data.sample_count
+        period = float(data.end_time - data.start_time)
         
         self.slices.append((average, period))
 
@@ -55,9 +55,10 @@ class GradientAnalyser(AnalogMeasurer):
             gradient.append(self.slices[slice_index - 1][0] - self.slices[slice_index + 1][0])
 
         values = {
-            "average" : self.slices[0][0] - self.slices[-1][0] / period,
+            "average" : (self.slices[-1][0] - self.slices[0][0]) / period,
             "peak" :  max(gradient) / tick_period,
             "trough" :  min(gradient) / tick_period,
+            "slices": len(self.slices)
         }
 
         return values
